@@ -1,0 +1,15 @@
+{
+  "name": "ShareApps",
+  "version": "0.0.0",
+  "authors": [
+    "Alex Zaykin <Alexander.Zaykin@gmail.com>"
+  ],
+  "description": "Beta testing service",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular": "~1.3.0",
+    "jquery-ui": "~1.11.2"
+  }
+}
