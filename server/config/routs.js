@@ -14,6 +14,18 @@ module.exports = function(app){
 		res.render('index.html');
 	});
 
+	app.get('/myteam', function(req, res){
+		res.render('teamview.html');
+	});
+
+	app.get('/projects', function(req, res){
+		res.render('projview.html')
+	})
+
+	app.get('/about', function(req, res){
+		res.render('about.html');
+	});
+
 	app.get('/users', function(req, res){
 		
 		console.log(users.modelName);
