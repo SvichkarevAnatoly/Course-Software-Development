@@ -23,13 +23,12 @@ public class ShareApps {
                     oldHandler.uncaughtException(thread, throwable);
                 }
             }
-
         });
     }
 
     private static void simpleLogError(Throwable e) {
         final String CATCHING_HEADER = "Catching error: ";
-        final String errorMessage = e.getCause().getMessage();
+        final String errorMessage = e.toString();
 
         final String msg = CATCHING_HEADER + errorMessage;
 
