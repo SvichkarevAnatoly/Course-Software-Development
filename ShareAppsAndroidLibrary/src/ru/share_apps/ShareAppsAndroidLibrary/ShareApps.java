@@ -14,8 +14,11 @@ public class ShareApps {
             @Override
             public void uncaughtException(Thread paramThread, final Throwable e) {
                 final String CATCHING_HEADER = "Catching error: ";
+                final String errorMessage = e.getCause().getMessage();
 
-                Log.e(TAG, CATCHING_HEADER + e.toString());
+                final String msg = CATCHING_HEADER + errorMessage;
+
+                Log.e(TAG, msg);
             }
 
         });
