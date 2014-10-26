@@ -7,21 +7,33 @@ public class ShareApps {
 
     private static String startingKey;
 
+    private static Thread.UncaughtExceptionHandler oldHandler;
+
     public static void startWithKey(String key) {
         startingKey = key;
 
+        oldHandler = Thread.getDefaultUncaughtExceptionHandler();
+
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
-            public void uncaughtException(Thread paramThread, final Throwable e) {
-                final String CATCHING_HEADER = "Catching error: ";
-                final String errorMessage = e.getCause().getMessage();
+            public void uncaughtException(Thread thread, final Throwable throwable) {
+                simpleLogError(throwable);
 
-                final String msg = CATCHING_HEADER + errorMessage;
-
-                Log.e(TAG, msg);
+                if (oldHandler != null) {
+                    oldHandler.uncaughtException(thread, throwable);
+                }
             }
 
         });
+    }
+
+    private static void simpleLogError(Throwable e) {
+        final String CATCHING_HEADER = "Catching error: ";
+        final String errorMessage = e.getCause().getMessage();
+
+        final String msg = CATCHING_HEADER + errorMessage;
+
+        Log.e(TAG, msg);
     }
 
     public static void log(String msg) {
