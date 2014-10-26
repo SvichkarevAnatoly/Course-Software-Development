@@ -11,5 +11,7 @@ public class MyActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        throw new NullPointerException("PRIVET ot exception");
     }
 }
