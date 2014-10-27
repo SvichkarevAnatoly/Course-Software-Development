@@ -1,0 +1,16 @@
+{
+  "name": "ShareApps",
+  "version": "1.0.0",
+  "description": "Beta testing service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Zaykin",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.9.7",
+    "mongoose": "^3.8.17"
+  }
+}
